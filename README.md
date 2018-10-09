@@ -53,7 +53,7 @@ Eclipse 安装及配置
 二、安装eclipse
 
 1.官网下载 Eclipse IDE for Java EE Developers（64位）：http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2018-09/R/eclipse-jee-2018-09-linux-gtk-x86_64.tar.gz
-![image](https://github.com/ArthurCaoMH/Ubuntu16.04LTS-JDK-eclipse/pictures/eclipse_java_ee.png)
+![image](https://github.com/ArthurCaoMH/Ubuntu16.04LTS-JDK-eclipse/blob/master/pictures/eclipse_java_ee.png)
 这里最好还是要用什么就下什么包，大家都知道 Eclipse Installer 这个安装包在没有外网的情况下是基本废的
 
 2.安装 eclipse 将其解压到/opt/文件夹中
