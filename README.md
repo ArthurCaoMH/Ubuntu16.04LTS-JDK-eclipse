@@ -3,11 +3,12 @@
 
 
     
-系统版本：Ubuntu 16.04.2 LTS
-JDK版本：jdk1.8.0_121
+系统版本：Ubuntu 16.04 LTS
+JDK版本：jdk1.8.0_181
 
-1.官网下载 JDK文件：jdk-8u121-linux-x64.tar.gz
-以上是最新版，其他版本也可以
+一、安装JDK
+
+1.官网下载 JDK文件：http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.tar.gz
 
 2.创建一个目录作为JDK的安装目录，我的目录为 /opt/java
 sudo mkdir /opt/java
@@ -27,10 +28,6 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib
 export JAVA_HOME=/opt/java/jdk1.8.0_121
 
-    1
-    2
-    3
-
 修改完成之后保存关闭，并输入以下命令使环境变量立即生效
 source /etc/environment
 
@@ -38,20 +35,11 @@ source /etc/environment
 sudo gedit /etc/profile
 
 在文件的最后添加以下内容：
-
 #set Java environment
-
 export JAVA_HOME=/opt/java/jdk1.8.0_121
 export JRE_HOME=$JAVA_HOME/jre
 export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
-
-    1
-    2
-    3
-    4
-    5
-    6
 
 7.同样，需要使用命令使环境变量立即生效
 source /etc/profile
@@ -62,11 +50,9 @@ source /etc/profile
 9.重启电脑，能正常进入系统，且 java -version 命令有效
 Eclipse 安装及配置
 
-参考来源1：http://jingyan.baidu.com/article/495ba841e8383038b20ede4b.html
-参考来源2：http://www.linuxidc.com/Linux/2016-07/133482.htm
-参考来源3：http://www.cnblogs.com/dartagnan/archive/2010/12/01/2003528.html
+二、安装eclipse
 
-1.官网下载 Eclipse IDE for Java EE Developers（64位）：eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz
+1.官网下载 Eclipse IDE for Java EE Developers（64位）：http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2018-09/R/eclipse-jee-2018-09-linux-gtk-x86_64.tar.gz
 
 这里最好还是要用什么就下什么包，大家都知道 Eclipse Installer 这个安装包在没有外网的情况下是基本废的
 
@@ -79,7 +65,16 @@ sudo touch eclipse.desktop
 sudo vim eclipse.desktop
 
 输入以下内容：
-截图
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse
+Exec=/opt/eclipse/eclipse
+Icon=/opt/eclipse/icon.xpm
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Development;
 
 保存。
 执行：sudo chmod 775 eclipse.desktop 将其变为可执行文件.
